@@ -33,18 +33,3 @@ export const listGroupHandler = (e) => {
         deleteList(e.target.closest(".list").id);
     }
 };
-export const deleteAllHandler = (e) => {
-    if (confirm("are you sure to remove all tasks?")) {
-        const allList = listGroup.querySelectorAll(".list");
-        allList.forEach((list) => list.remove());
-    }
-};
-export const doneAllHandler = (e) => {
-    if (confirm("are you sure to done all task?")) {
-        const allList = listGroup.querySelectorAll(".list");
-        allList.forEach((list) => {
-            checkList(list.id);
-            list.querySelector(".checkInput").checked = true;
-        });
-    }
-};
